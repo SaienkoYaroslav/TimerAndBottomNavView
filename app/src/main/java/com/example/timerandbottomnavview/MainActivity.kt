@@ -24,9 +24,11 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         val sharedPreferences = getSharedPreferences("prefs", Context.MODE_PRIVATE)
-        sharedPreferences.edit().putInt("key", 30000).apply()
+        sharedPreferences.edit().putLong("key", 30000).apply()
         sharedPreferences.edit().putFloat("key_progress", 0f).apply()
         sharedPreferences.edit().putFloat("key_progress_start", 100f).apply()
+//        sharedPreferences.edit().putBoolean("is_running", true).apply()
+//        sharedPreferences.edit().putLong("key_current_time", 0).apply()
     }
 
 
