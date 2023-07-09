@@ -85,7 +85,9 @@ class TimerFragment : Fragment() {
         if (totalTime < 1000) totalTime = 30000
         Log.d("Timer", "load timer: $totalTime")
         startProgress = loadProgressBar(view, "key_progress_start")
+        if (startProgress < 1f) startProgress = 100f
         currentProgress = loadProgressBar(view, "key_progress")
+        if (currentProgress > 99f) currentProgress = 0f
         Log.d("Timer", "load start progress: $startProgress")
         val progressIncrement =
             startProgress / (totalTime / interval) // Приріст прогресу на кожному інтервалі
